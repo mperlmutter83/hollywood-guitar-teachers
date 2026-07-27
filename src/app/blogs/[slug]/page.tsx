@@ -6,6 +6,8 @@ import { getPostBySlug, getAllPostSlugs } from '@/lib/blog-data';
 
 interface Props { params: Promise<{ slug: string }> }
 
+export const revalidate = 3600;
+
 export async function generateStaticParams() { return getAllPostSlugs().map((slug) => ({ slug })); }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> { const { slug } = await params; const post = getPostBySlug(slug); if (!post) return { title: 'Not Found' }; return { title: post.title }; }

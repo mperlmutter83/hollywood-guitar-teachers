@@ -1,11 +1,14 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { blogPosts } from '@/lib/blog-data';
+import { getPublishedPosts } from '@/lib/blog-data';
 
 export const metadata: Metadata = { title: 'Blogs' };
 
+export const revalidate = 3600;
+
 export default function BlogsPage() {
+  const blogPosts = getPublishedPosts();
   return (
     <div>
       <section className="bg-indigo-900 text-white py-16"><div className="max-w-7xl mx-auto px-4"><h1 className="text-4xl font-bold">Blogs</h1></div></section>
