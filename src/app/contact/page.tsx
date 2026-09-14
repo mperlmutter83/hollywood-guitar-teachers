@@ -13,7 +13,7 @@ export default function ContactPage() {
           <div className="bg-gray-50 p-8 rounded-lg">
             <h2 className="font-bold text-xl mb-4">Get in Touch</h2>
             <div className="mb-4"><h3 className="font-bold">Phone</h3><a href="tel:+18188736719" className="text-indigo-600 text-xl font-bold">(818) 873-6719</a></div>
-            <div className="mb-4"><h3 className="font-bold">Email</h3><a href="mailto:info@hollywoodguitarteacher.com" className="text-indigo-600">info@hollywoodguitarteacher.com</a></div>
+            <div className="mb-4"><h3 className="font-bold">Email</h3><a href="mailto:info@hollywoodguitarteachers.com" className="text-indigo-600">info@hollywoodguitarteachers.com</a></div>
             <div><h3 className="font-bold">Location</h3><p className="text-gray-600">Los Angeles, CA</p></div>
           </div>
         </div>

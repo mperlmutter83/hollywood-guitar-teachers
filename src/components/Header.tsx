@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="bg-indigo-900 text-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="font-bold text-xl">Hollywood Guitar Teacher</Link>
+        <Link href="/" className="font-bold text-xl">Hollywood Guitar Teachers</Link>
         <nav className="hidden md:flex items-center gap-6">
           <Link href="/" className="hover:text-amber-400">Home</Link>
           <Link href="/classes" className="hover:text-amber-400">Classes</Link>

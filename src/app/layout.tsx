@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: { default: "Hollywood Guitar Teacher | Professional Guitar Lessons in Los Angeles", template: "%s | Hollywood Guitar Teacher" },
+  title: { default: "Hollywood Guitar Teachers | Professional Guitar Lessons in Los Angeles", template: "%s | Hollywood Guitar Teachers" },
   description: "Unlock your musical potential with personalized guitar lessons from experienced professionals. Call (818) 873-6719.",
 };
 

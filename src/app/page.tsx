@@ -20,7 +20,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-indigo-900/70"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 text-white">
           <p className="text-amber-400 tracking-widest">Master the Art of Guitar Playing</p>
-          <h1 className="text-5xl md:text-6xl font-bold mt-2 mb-6">Hollywood Guitar Teacher</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mt-2 mb-6">Hollywood Guitar Teachers</h1>
           <p className="text-xl mb-6 max-w-2xl">Unlock your musical potential with personalized guitar lessons from experienced professionals in Los Angeles.</p>
           <Link href="/contact" className="inline-block bg-amber-500 px-8 py-3 font-medium hover:bg-amber-600">Get Started Today</Link>
         </div>
@@ -60,7 +60,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 grid md:grid-cols-2 gap-8">
           <div><h3 className="font-bold text-lg mb-2">Address</h3><p className="text-gray-600">Los Angeles, CA</p></div>
-          <div><h3 className="font-bold text-lg mb-2">Email</h3><a href="mailto:info@hollywoodguitarteacher.com" className="text-indigo-600">info@hollywoodguitarteacher.com</a></div>
+          <div><h3 className="font-bold text-lg mb-2">Email</h3><a href="mailto:info@hollywoodguitarteachers.com" className="text-indigo-600">info@hollywoodguitarteachers.com</a></div>
         </div>
       </section>
     </div>
