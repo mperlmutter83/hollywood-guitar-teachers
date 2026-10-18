@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PhoneClickTracker from "@/components/PhoneClickTracker";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -52,5 +53,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         />
       </noscript>
       {/* End Google Tag Manager (noscript) */}
-      <Header /><main>{children}</main><Footer /></body></html>;
+      <PhoneClickTracker /><Header /><main>{children}</main><Footer /></body></html>;
 }
