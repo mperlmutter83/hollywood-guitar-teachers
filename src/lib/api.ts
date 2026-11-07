@@ -63,3 +63,66 @@ export function formatDate(dateString: string): string {
     day: "numeric",
   }).format(new Date(dateString));
 }
+
+/** Normalized shape for rendering (matches local blog-data fields). */
+export interface RenderPost {
+  slug: string;
+  title: string;
+  date: string;
+  publishedAt: string;
+  category: string;
+  excerpt: string;
+  image?: string;
+  content: string;
+  isCentral: boolean;
+}
+
+export function toRenderPost(p: BlogPost): RenderPost {
+  const dateIso = p.publish_at || p.created_at;
+  return {
+    slug: p.slug,
+    title: p.title,
+    date: formatDate(dateIso),
+    publishedAt: dateIso,
+    category: p.category || "Guitar",
+    excerpt: p.excerpt || "",
+    image: p.image_url || undefined,
+    content: p.content,
+    isCentral: true,
+  };
+}
+
+/** Markdown-light (##, ###, -, **bold**) -> HTML for central posts. */
+export function contentToHtml(content: string): string {
+  const inline = (s: string) =>
+    s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+  const blocks = content.split(/\n\n+/);
+  const out: string[] = [];
+  let list: string[] = [];
+  const flush = () => {
+    if (list.length) {
+      out.push("<ul>" + list.map((i) => `<li>${inline(i)}</li>`).join("") + "</ul>");
+      list = [];
+    }
+  };
+  for (const raw of blocks) {
+    const b = raw.trim();
+    if (!b) continue;
+    if (b.startsWith("<")) {
+      flush();
+      out.push(b);
+      continue;
+    }
+    if (b.startsWith("- ")) {
+      const items = b.split("\n").filter((l) => l.trim().startsWith("- "));
+      list.push(...items.map((l) => l.trim().slice(2)));
+      continue;
+    }
+    flush();
+    if (b.startsWith("### ")) out.push(`<h3>${inline(b.slice(4))}</h3>`);
+    else if (b.startsWith("## ")) out.push(`<h2>${inline(b.slice(3))}</h2>`);
+    else out.push(`<p>${inline(b).replace(/\n/g, "<br>")}</p>`);
+  }
+  flush();
+  return out.join("\n");
+}

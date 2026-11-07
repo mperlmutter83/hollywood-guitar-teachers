@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+export const metadata = {
+  alternates: {
+    canonical: "https://www.hollywoodguitarteachers.com",
+  },
+};
+
 export default function Home() {
   const lessons = [
     { name: 'Beginner Guitar Lessons', desc: 'Perfect for those just starting out, covering basic chords, strumming patterns, and simple songs.', image: '/images/beginner.jpg' },
